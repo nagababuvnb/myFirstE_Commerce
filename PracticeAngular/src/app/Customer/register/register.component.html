@@ -1,0 +1,70 @@
+<div class="register">
+  <h1 class="">Registration Form</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="Onsubmit()">
+    <div>
+      <mat-form-field appearance="outline" class="registerInput">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          placeholder="Enter your name"
+          type="text"
+          formControlName="uname"
+        />
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error
+          *ngIf="Name?.errors?.['minlength'] || Name?.hasError('required')"
+          >user name should be minimum 8 characters</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline" class="registerInput">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Enter your mailId"
+          type="email"
+          formControlName="email"
+        />
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error *ngIf="Mail?.hasError('email') || Mail?.hasError('required')"
+          >please enter a valid email address</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline" class="registerInput">
+        <mat-label>PhoneNumber</mat-label>
+        <input
+          matInput
+          placeholder="Enter your mobile number"
+          type="text"
+          formControlName="number"
+        />
+        <mat-icon matSuffix>phone_in_talk</mat-icon>
+        <mat-error
+          *ngIf="Number?.errors?.['minlength'] || Number?.errors?.['required']"
+          >Please provide a valid number</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline" class="registerInput">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Enter your Password"
+          type="password"
+          formControlName="password"
+        />
+        <mat-icon matSuffix>password</mat-icon>
+        <mat-error
+          *ngIf="Pass?.errors?.['minlength'] || Pass?.hasError('required')"
+          >Password should contain atleast 8 characters, one number and one
+          special character
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Sign up</button>
+  </form>
+</div>

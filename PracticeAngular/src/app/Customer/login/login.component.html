@@ -1,0 +1,24 @@
+<div class="login">
+    <h1>Login to Your Account</h1>
+   <form [formGroup]="login" (ngSubmit)="Onsubmit()">
+    <div>
+        <mat-form-field appearance="outline" class="loginInput" >
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your mailId" type="text" formControlName="email"
+           [class.danger]="Mail?.invalid && Mail?.touched"/>
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-error *ngIf="Mail?.hasError('email') || Mail?.touched" class="danger">please enter a valid Email address</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="loginInput" >
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Enter your password" type="Password" formControlName="password"/>
+          <mat-icon matSuffix>password</mat-icon>
+          <mat-error *ngIf="Pass?.touched" class="danger">Password is required</mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" type="submit" >Login</button>
+   </form>
+   
+</div>

@@ -1,0 +1,38 @@
+.login{
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  box-shadow: 7px 10px 15px 15px rgb(164, 162, 162);
+  
+
+}
+.loginInput{
+   width: 400px;
+   margin: 15px;
+   
+}
+input{
+    letter-spacing: 2px;
+    font-size: medium;
+}
+h1{
+    text-align: center;
+    letter-spacing: 1px;
+    background-color: antiquewhite;
+    padding: 10px;
+    margin-bottom: 0px;
+    border-radius: 3px;
+}
+button{
+    align-items: center;
+    margin: 15px;
+    height: 50px;
+    width: 400px;
+
+}
+.danger{
+    color: red;
+}
